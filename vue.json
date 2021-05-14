@@ -1,0 +1,11 @@
+{
+	"vue_function": {
+		"prefix": "fnvue",
+		"body": [
+			"${1:functionName}(${2:params}) {",
+			"\t${0:// body}",
+			"}"
+		],
+		"description": "print anonyme function"
+	},
+}

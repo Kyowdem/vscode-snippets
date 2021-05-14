@@ -27,33 +27,12 @@
 		],
 		"description": "print console.clear()"
 	},
-	"console_time": {
-		"prefix": "cts",
-		"body": [
-			"console.time('${0:foo}');"
-		],
-		"description": "print console.time()"
-	},
-	"console_time_end": {
-		"prefix": "cte",
-		"body": [
-			"console.timeEnd('${0:foo}');"
-		],
-		"description": "print console.timeEnd()"
-	},
 	"alert": {
 		"prefix": "al",
 		"body": [
 			"alert('${0:foo}');"
 		],
 		"description": "print alert()"
-	},
-	"confirm": {
-		"prefix": "co",
-		"body": [
-			"confirm('${0:foo}');"
-		],
-		"description": "print confirm()"
 	},
 	"function": {
 		"prefix": "fn",
@@ -64,19 +43,10 @@
 		],
 		"description": "print function"
 	},
-	"anonyme_function": {
-		"prefix": "afn",
+	"arrow_function": {
+		"prefix": "fnarroz",
 		"body": [
-			"(${1:params}) => {",
-			"\t${0:// body}",
-			"}"
-		],
-		"description": "print anonyme function"
-	},
-	"vue_function": {
-		"prefix": "fnv",
-		"body": [
-			"${1:functionName}(${2:params}) {",
+			"${2:foo} = (${1:params}) => {",
 			"\t${0:// body}",
 			"}"
 		],
@@ -129,20 +99,6 @@
 		],
 		"description": "print setTimeInterval()"
 	},
-	"JSON_parse": {
-		"prefix": "Jp",
-		"body": [
-			"JSON.parse(${0:string});"
-		],
-		"description": "print JSON.parse()"
-	},
-	"JSON_stringify": {
-		"prefix": "Js",
-		"body": [
-			"JSON.stringify(${0:object});"
-		],
-		"description": "print JSON.stringify()"
-	},
 	"for loop": {
 		"prefix": "frl",
 		"body": [
@@ -155,23 +111,14 @@
 	"for each": {
 		"prefix": "fre",
 		"body": [
-			"for (let property in ${1:object}) {",
+			"for (let prop in ${1:object}) {",
 			"\t$0",
 			"}"
 		],
 		"description": "boucle for each"
 	},
-	"Array foreach": {
-		"prefix": "fra",
-		"body": [
-			"${1:array}.forEach((${2:element}) => {",
-			"\t$0",
-			"});"
-		],
-		"description": "foreach with array"
-	},
 	"condition if": {
-		"prefix": "ifn",
+		"prefix": "ifc",
 		"body": [
 			"if (${1:condition}) {",
 			"\t${0:// Body}",
@@ -191,29 +138,4 @@
 		],
 		"description": "condition if else"
 	},
-	"jQuery element": {
-		"prefix": "jq",
-		"body": [
-			"$('${1:element}').${2:action}($0);"
-		],
-		"description": "jQuery element"
-	},
-	"class": {
-		"prefix": "newCl",
-		"body": [
-			"class ${1:className} {",
-			"\tconstructor() { }\n\n\t$0",
-			"}"
-		],
-		"description": "class"
-	},
-	"classVariable": {
-		"prefix": "varc",
-		"body": [
-			"_${1:varibaleName} = ${0:0};",
-			"get ${1:varibaleName}() { return this._${1:varibaleName} }",
-			"set ${1:varibaleName}(value) { this._${1:varibaleName} = value; }"
-		],
-		"description": "variable with getter and setter"
-	}
 }
