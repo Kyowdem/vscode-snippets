@@ -1,0 +1,73 @@
+// FOR C++
+{
+	"Print to console": {
+		"prefix": "ct",
+		"body": "std::cout << $1 << std::endl;",
+		"description": "output to console"
+	},
+	"Print to console obj with msg": {
+		"prefix": "ct2",
+		"body": "std::cout << \"$1: \" << $1 << std::endl;",
+		"description": "output to console obj with msg"
+	},
+	"using namespace": {
+		"prefix": "uns",
+		"body": "using namespace std;"
+	},
+	"include library": {
+		"prefix": "inc",
+		"body": "#include <$1>",
+		"description": "include a library"
+	},
+	"include iostream": {
+		"prefix": "ios",
+		"body": "#include <iostream>",
+		"description": "include iostream library"
+	},
+	"function": {
+		"prefix": "fn",
+		"body": [
+			"${1:void} ${2:name} ($3)",
+			"{",
+			"\t$4",
+			"}"
+		],
+		"description": "add function"
+	},
+	"class": {
+		"prefix": "class",
+		"body": [
+			"class ${1/(.*)/${1:/capitalize}/}",
+			"{",
+			"\tpublic:\n",
+			"\tprivate:\n",
+			"}"
+		],
+		"description": "add class"
+	},
+	"for loop": {
+		"prefix": "frl",
+		"body": "for(int i = 0; i < ${1:array.length}; i++) {\n\t$0\n}",
+		"description": "banal for loop"
+	},
+	"for loop oneline": {
+		"prefix": "frl1",
+		"body": "for(int i = 0; i < ${1:array.length}; i++) \n\t$0;",
+		"description": "for loop on oneline"
+	},
+	"for each": {
+		"prefix": "fre",
+		"body": "for(auto& el : ${1:obj}) {\n\t$0\n}",
+		"description": "for each element in object"
+	},
+	"if condition": {
+		"prefix": "if",
+		"body": "if(${1:bool}) {\n\t$0\n}",
+		"description": "banal if condition"
+	},
+	"if condition oneline": {
+		"prefix": "if1",
+		"body": "if(${1:bool}) \n\t$0;",
+		"description": "if condition on oneline"
+	}
+}

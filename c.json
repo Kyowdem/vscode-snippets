@@ -1,0 +1,63 @@
+{
+	"create C template": {
+		"prefix": "ctemp",
+		"body": [
+			"#include <stdio.h>\n",
+			"int main() {\n\t$0\n\n\treturn 0;\n}"
+		],
+		"description": "create template of C file"
+	},
+	"Print to console": {
+		"prefix": "prt",
+		"body": "printf(\"$0\\n\");",
+		"description": "output to console"
+	},
+	"Print decimal to console": {
+		"prefix": "prtd",
+		"body": "printf(\"%d\\n\", $0);",
+		"description": "output decimal to console"
+	},
+	"Print string to console": {
+		"prefix": "prts",
+		"body": "printf(\"%s\\n\", $0);",
+		"description": "output string to console"
+	},
+	"print char to console": {
+		"prefix": "prtc",
+		"body": "printf(\"%c\\n\", $0);",
+		"description": "output char to console"
+	},
+	"Print an other type to console": {
+		"prefix": "prto",
+		"body": "printf(\"%$1\\n\", $0);",
+		"description": "output an other type string to console"
+	},
+	"for loop": {
+		"prefix": "frl",
+		"body": [
+			"for(int i = 0; i < ${1:array.length}; i++) {",
+			"\t$0",
+			"}"
+		],
+		"description": "basic loop for with i"
+	},
+	"void function": {
+		"prefix": "fnv",
+		"body": [
+			"void $1 (${2:void}) {",
+			"\t$3",
+			"}"
+		],
+		"description": "void function"
+	},
+	"function": {
+		"prefix": "fn",
+		"body": [
+			"${1:int} ${2:name} ($3) {",
+			"\t$4",
+			"\n\n\treturn 0;",
+			"}"
+		],
+		"description": "void function"
+	}
+}
