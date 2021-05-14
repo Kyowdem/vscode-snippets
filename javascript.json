@@ -1,222 +1,219 @@
 {
-	{
-		"console_dir": {
-			"prefix": "cd",
-			"body": [
-				"console.dir(${0:foo});"
-			],
-			"description": "print console.dir()"
-		},
-		"console_error": {
-			"prefix": "ce",
-			"body": [
-				"console.error(${0:foo});"
-			],
-			"description": "print console.error()"
-		},
-		"console_log": {
-			"prefix": "cl",
-			"body": [
-				"console.log('${0:foo}');"
-			],
-			"description": "print console.log()"
-		},
-		"console_clear": {
-			"prefix": "ccl",
-			"body": [
-				"console.clear();"
-			],
-			"description": "print console.clear()"
-		},
-		"console_time": {
-			"prefix": "cts",
-			"body": [
-				"console.time('${0:foo}');"
-			],
-			"description": "print console.time()"
-		},
-		"console_time_end": {
-			"prefix": "cte",
-			"body": [
-				"console.timeEnd('${0:foo}');"
-			],
-			"description": "print console.timeEnd()"
-		},
-		"alert": {
-			"prefix": "al",
-			"body": [
-				"alert('${0:foo}');"
-			],
-			"description": "print alert()"
-		},
-		"confirm": {
-			"prefix": "co",
-			"body": [
-				"confirm('${0:foo}');"
-			],
-			"description": "print confirm()"
-		},
-		"function": {
-			"prefix": "fn",
-			"body": [
-				"const ${1:foo} = function (${2:params}) {",
-				"\t${0:// body}",
-				"}"
-			],
-			"description": "print function"
-		},
-		"anonyme_function": {
-			"prefix": "afn",
-			"body": [
-				"(${1:params}) => {",
-				"\t${0:// body}",
-				"}"
-			],
-			"description": "print anonyme function"
-		},
-		"vue_function": {
-			"prefix": "fnv",
-			"body": [
-				"${1:functionName}(${2:params}) {",
-				"\t${0:// body}",
-				"}"
-			],
-			"description": "print anonyme function"
-		},
-		"prototype": {
-			"prefix": "prt",
-			"body": [
-				"${1:object}.prototype.${2:functionName} = function (${3:params}) {",
-				"\t${0:// body}",
-				"}"
-			],
-			"description": "print prototype"
-		},
-		"promise": {
-			"prefix": "prm",
-			"body": [
-				"var ${1:promise1} = new Promise((resolve, reject) => {",
-				"\t${2:// Body}",
-				"\tresolve('ok'), reject('ko')",
-				"});\n",
-				"$1.catch((value) => { console.log(value); });",
-				"$1.then((value) => { \n\tconsole.log(value); \n\t${0:// Body}\n});"
-			],
-			"description": "print promise"
-		},
-		"trycatch": {
-			"prefix": "trc",
-			"body": [
-				"try { \n\t${0:// Body}\n}",
-				"catch (e) { console.log('%c#ERR: ' + e + '. Look down for more information ↓', 'color: red'); console.log(e.stack); }"
-			],
-			"description": "print trycatch function"
-		},
-		"setTimeout": {
-			"prefix": "st",
-			"body": [
-				"setTimeout(() => {",
-				"\t${0:// body}",
-				"}, ${1:1000});"
-			],
-			"description": "print setTimeout()"
-		},
-		"setInterval": {
-			"prefix": "si",
-			"body": [
-				"setInterval(() => {",
-				"\t${0:// body}",
-				"}, ${1:1000});"
-			],
-			"description": "print setTimeInterval()"
-		},
-		"JSON_parse": {
-			"prefix": "Jp",
-			"body": [
-				"JSON.parse(${0:string});"
-			],
-			"description": "print JSON.parse()"
-		},
-		"JSON_stringify": {
-			"prefix": "Js",
-			"body": [
-				"JSON.stringify(${0:object});"
-			],
-			"description": "print JSON.stringify()"
-		},
-		"for loop": {
-			"prefix": "frl",
-			"body": [
-				"for (let ${1:i} = 0; ${1:i} < ${2:array}.length; ${1:i}++) {",
-				"\t$0",
-				"}"
-			],
-			"description": "boucle for loop"
-		},
-		"for each": {
-			"prefix": "fre",
-			"body": [
-				"for (let property in ${1:object}) {",
-				"\t$0",
-				"}"
-			],
-			"description": "boucle for each"
-		},
-		"Array foreach": {
-			"prefix": "fra",
-			"body": [
-				"${1:array}.forEach((${2:element}) => {",
-				"\t$0",
-				"});"
-			],
-			"description": "foreach with array"
-		},
-		"condition if": {
-			"prefix": "ifn",
-			"body": [
-				"if (${1:condition}) {",
-				"\t${0:// Body}",
-				"}"
-			],
-			"description": "condition if"
-		},
-		"condition if else": {
-			"prefix": "ife",
-			"body": [
-				"if (${1:condition}) {",
-				"\t${2:// body}",
-				"}",
-				"else {",
-				"\t${0:// body}",
-				"}"
-			],
-			"description": "condition if else"
-		},
-		"jQuery element": {
-			"prefix": "jq",
-			"body": [
-				"$('${1:element}').${2:action}($0);"
-			],
-			"description": "jQuery element"
-		},
-		"class": {
-			"prefix": "newCl",
-			"body": [
-				"class ${1:className} {",
-				"\tconstructor() { }\n\n\t$0",
-				"}"
-			],
-			"description": "class"
-		},
-		"classVariable": {
-			"prefix": "varc",
-			"body": [
-				"_${1:varibaleName} = ${0:0};",
-				"get ${1:varibaleName}() { return this._${1:varibaleName} }",
-				"set ${1:varibaleName}(value) { this._${1:varibaleName} = value; }"
-			],
-			"description": "variable with getter and setter"
-		}
-		
+	"console_dir": {
+		"prefix": "cd",
+		"body": [
+			"console.dir(${0:foo});"
+		],
+		"description": "print console.dir()"
+	},
+	"console_error": {
+		"prefix": "ce",
+		"body": [
+			"console.error(${0:foo});"
+		],
+		"description": "print console.error()"
+	},
+	"console_log": {
+		"prefix": "cl",
+		"body": [
+			"console.log('${0:foo}');"
+		],
+		"description": "print console.log()"
+	},
+	"console_clear": {
+		"prefix": "ccl",
+		"body": [
+			"console.clear();"
+		],
+		"description": "print console.clear()"
+	},
+	"console_time": {
+		"prefix": "cts",
+		"body": [
+			"console.time('${0:foo}');"
+		],
+		"description": "print console.time()"
+	},
+	"console_time_end": {
+		"prefix": "cte",
+		"body": [
+			"console.timeEnd('${0:foo}');"
+		],
+		"description": "print console.timeEnd()"
+	},
+	"alert": {
+		"prefix": "al",
+		"body": [
+			"alert('${0:foo}');"
+		],
+		"description": "print alert()"
+	},
+	"confirm": {
+		"prefix": "co",
+		"body": [
+			"confirm('${0:foo}');"
+		],
+		"description": "print confirm()"
+	},
+	"function": {
+		"prefix": "fn",
+		"body": [
+			"const ${1:foo} = function (${2:params}) {",
+			"\t${0:// body}",
+			"}"
+		],
+		"description": "print function"
+	},
+	"anonyme_function": {
+		"prefix": "afn",
+		"body": [
+			"(${1:params}) => {",
+			"\t${0:// body}",
+			"}"
+		],
+		"description": "print anonyme function"
+	},
+	"vue_function": {
+		"prefix": "fnv",
+		"body": [
+			"${1:functionName}(${2:params}) {",
+			"\t${0:// body}",
+			"}"
+		],
+		"description": "print anonyme function"
+	},
+	"prototype": {
+		"prefix": "prt",
+		"body": [
+			"${1:object}.prototype.${2:functionName} = function (${3:params}) {",
+			"\t${0:// body}",
+			"}"
+		],
+		"description": "print prototype"
+	},
+	"promise": {
+		"prefix": "prm",
+		"body": [
+			"var ${1:promise1} = new Promise((resolve, reject) => {",
+			"\t${2:// Body}",
+			"\tresolve('ok'), reject('ko')",
+			"});\n",
+			"$1.catch((value) => { console.log(value); });",
+			"$1.then((value) => { \n\tconsole.log(value); \n\t${0:// Body}\n});"
+		],
+		"description": "print promise"
+	},
+	"trycatch": {
+		"prefix": "trc",
+		"body": [
+			"try { \n\t${0:// Body}\n}",
+			"catch (e) { console.log('%c#ERR: ' + e + '. Look down for more information ↓', 'color: red'); console.log(e.stack); }"
+		],
+		"description": "print trycatch function"
+	},
+	"setTimeout": {
+		"prefix": "st",
+		"body": [
+			"setTimeout(() => {",
+			"\t${0:// body}",
+			"}, ${1:1000});"
+		],
+		"description": "print setTimeout()"
+	},
+	"setInterval": {
+		"prefix": "si",
+		"body": [
+			"setInterval(() => {",
+			"\t${0:// body}",
+			"}, ${1:1000});"
+		],
+		"description": "print setTimeInterval()"
+	},
+	"JSON_parse": {
+		"prefix": "Jp",
+		"body": [
+			"JSON.parse(${0:string});"
+		],
+		"description": "print JSON.parse()"
+	},
+	"JSON_stringify": {
+		"prefix": "Js",
+		"body": [
+			"JSON.stringify(${0:object});"
+		],
+		"description": "print JSON.stringify()"
+	},
+	"for loop": {
+		"prefix": "frl",
+		"body": [
+			"for (let ${1:i} = 0; ${1:i} < ${2:array}.length; ${1:i}++) {",
+			"\t$0",
+			"}"
+		],
+		"description": "boucle for loop"
+	},
+	"for each": {
+		"prefix": "fre",
+		"body": [
+			"for (let property in ${1:object}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "boucle for each"
+	},
+	"Array foreach": {
+		"prefix": "fra",
+		"body": [
+			"${1:array}.forEach((${2:element}) => {",
+			"\t$0",
+			"});"
+		],
+		"description": "foreach with array"
+	},
+	"condition if": {
+		"prefix": "ifn",
+		"body": [
+			"if (${1:condition}) {",
+			"\t${0:// Body}",
+			"}"
+		],
+		"description": "condition if"
+	},
+	"condition if else": {
+		"prefix": "ife",
+		"body": [
+			"if (${1:condition}) {",
+			"\t${2:// body}",
+			"}",
+			"else {",
+			"\t${0:// body}",
+			"}"
+		],
+		"description": "condition if else"
+	},
+	"jQuery element": {
+		"prefix": "jq",
+		"body": [
+			"$('${1:element}').${2:action}($0);"
+		],
+		"description": "jQuery element"
+	},
+	"class": {
+		"prefix": "newCl",
+		"body": [
+			"class ${1:className} {",
+			"\tconstructor() { }\n\n\t$0",
+			"}"
+		],
+		"description": "class"
+	},
+	"classVariable": {
+		"prefix": "varc",
+		"body": [
+			"_${1:varibaleName} = ${0:0};",
+			"get ${1:varibaleName}() { return this._${1:varibaleName} }",
+			"set ${1:varibaleName}(value) { this._${1:varibaleName} = value; }"
+		],
+		"description": "variable with getter and setter"
 	}
 }
